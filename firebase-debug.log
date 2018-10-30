@@ -1,0 +1,58 @@
+[debug] [2018-10-30T07:56:33.872Z] ----------------------------------------------------------------------
+[debug] [2018-10-30T07:56:33.877Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Noppadon\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2018-10-30T07:56:33.877Z] CLI Version:   6.0.0
+[debug] [2018-10-30T07:56:33.877Z] Platform:      win32
+[debug] [2018-10-30T07:56:33.877Z] Node Version:  v8.12.0
+[debug] [2018-10-30T07:56:33.878Z] Time:          Tue Oct 30 2018 14:56:33 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-10-30T07:56:33.878Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-30T07:56:33.906Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-30T07:56:33.907Z] > authorizing via signed-in user
+[debug] [2018-10-30T07:56:33.908Z] [iam] checking project shopee-56e5c for permissions ["firebase.projects.get"]
+[debug] [2018-10-30T07:56:33.910Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-10-30T07:56:33.910Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-10-30T07:56:34.301Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-30T07:56:34.474Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/shopee-56e5c:testIamPermissions  
+
+[debug] [2018-10-30T07:56:35.877Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-30T07:56:35.879Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/shopee-56e5c  
+ 
+[debug] [2018-10-30T07:56:37.652Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\Mobile\ProjectOnsen\moblieProject'...
+[info] 
+[debug] [2018-10-30T07:56:37.656Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/245540693945/clients/_:getWebAppConfig  
+ 
+[debug] [2018-10-30T07:56:38.593Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2018-10-30T09:13:46.946Z] ----------------------------------------------------------------------
+[debug] [2018-10-30T09:13:47.013Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Noppadon\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2018-10-30T09:13:47.013Z] CLI Version:   6.0.0
+[debug] [2018-10-30T09:13:47.013Z] Platform:      win32
+[debug] [2018-10-30T09:13:47.013Z] Node Version:  v8.12.0
+[debug] [2018-10-30T09:13:47.034Z] Time:          Tue Oct 30 2018 16:13:47 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-10-30T09:13:47.034Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-30T09:13:47.360Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-30T09:13:47.361Z] > authorizing via signed-in user
+[debug] [2018-10-30T09:13:47.361Z] [iam] checking project shopee-56e5c for permissions ["firebase.projects.get"]
+[debug] [2018-10-30T09:13:47.362Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-10-30T09:13:47.362Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-10-30T09:13:48.030Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-30T09:13:48.829Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/shopee-56e5c:testIamPermissions  
+
+[debug] [2018-10-30T09:13:50.447Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-30T09:13:50.449Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/shopee-56e5c  
+ 
+[debug] [2018-10-30T09:13:51.779Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\Mobile\ProjectOnsen\moblieProject'...
+[info] 
+[debug] [2018-10-30T09:13:51.788Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/245540693945/clients/_:getWebAppConfig  
+ 
+[debug] [2018-10-30T09:13:52.334Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
