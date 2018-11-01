@@ -81,10 +81,8 @@
         <ons-search-input placeholder="Search" onchange="search(this.value)"></ons-search-input>
       </p>
       <ons-carousel fullscreen swipeable auto-scroll overscrollable id="carousel" style="height: 300px;">
-        <ons-carousel-item id="carousel1" style="background: url(images/1.jpg)no-repeat center;background-size: contain;">
-
-        </ons-carousel-item>
-        <ons-carousel-item id="carousel2" style="background: url(images/2.jpg)no-repeat center;background-size: contain;">
+        
+        <ons-carousel-item id="carousel2" style="background: url(images/LG_Mega_Expo.jpg)no-repeat center;background-size: contain;">
 
         </ons-carousel-item>
         <ons-carousel-item id="carousel3" style="background: url(images/3.jpg)no-repeat center;background-size: contain;">
@@ -222,6 +220,7 @@
       <ons-list-header>SHOPPING CART</ons-list-header>
 
       <div id="pic"></div>
+      <div id="showprice"></div>
       <script id="pic_template" type="text/template">
                     <% cart.forEach(function(cart){
                       var cart=cart.data()
@@ -235,9 +234,8 @@
                     <span class="list-item__subtitle" style="color: blue;"><%= cart.price %></span>
                 </div>
                 <div class="right">
-
-                    <ons-icon icon="md-delete"></ons-icon>
-
+                  <ons-icon icon="md-delete" onclick="deleteb(<%=num%>); deleteprice('<%= cart.price %>')"></ons-icon>
+                </div>
                     
             </ons-list-item><%});%> 
 
@@ -246,6 +244,7 @@
 
 
       <ons-button modifier="large">PROCEED TO PAY</ons-button>
+      
 
     </ons-page>
   </template>
@@ -317,7 +316,7 @@
               <ons-list-item>React</ons-list-item>
             </ons-list>
           </div>
-          <ons-button onclick="addtocart('<%= data.pid %>');totalprice('<%= data.price%>')">ADD TO CART</ons-button>
+          <ons-button onclick="addtocart('<%= data.pid %>'),totalprice('<%= data.price %>');">ADD TO CART</ons-button>
           <%})%>
         </ons-card>
      
@@ -501,7 +500,7 @@ var dataCart = [];
   
   function getData2cart() {
     var Delete = []
-    document.getElementById('photo').innerHTML = ""
+    document.getElementById('pic').innerHTML = ""
     console.log(dataCart);
     var j = 0
     dataCart.forEach(function (remove) {
@@ -514,10 +513,10 @@ var dataCart = [];
       var apr = db.collection("PRODUCTS").where("pid", "==", dataCart);
       apr.get().then(function (querySnapshot) {
         console.log(querySnapshot.docs)
-        var photo_template = $('#photo_template').html();
+        var photo_template = $('#pic_template').html();
         var html = ejs.render(photo_template, { cart: querySnapshot.docs, num: testnum });
         console.log(html);
-        $('#photo').append(html);
+        $('#pic').append(html);
         testnum = testnum + 1;
       })
     })
@@ -588,7 +587,35 @@ var dataCart = [];
       //       });
       // }}
     }
-   
+   //Delete 
+  function deleteb(i) {
+    console.log(i);
+
+    console.log(dataCart);
+
+    var remove = dataCart.splice(i, 1)
+
+    ons.notification.alert("Do you want to delete the item?");
+    getData2cart()
+
+  }
+  var priceitem = 0;
+  //Total 
+  function totalprice(price1) {
+    var price1 = parseInt(price1, 10)
+    console.log(price1);
+
+    priceitem = priceitem + price1;
+    $('#showprice').html("<p><b>&nbsp; Total Price is : </b>" + priceitem + " </p>");
+  }  
+  function deleteprice(price2) {
+    var price2 = parseInt(price2, 10)
+    console.log(price2);
+
+    priceitem = priceitem - price2;
+    $('#showprice').html("<p><b>&nbsp; Total Price is : </b>" + priceitem + " </p>");
+
+  }
   </script>
 
 </html>
