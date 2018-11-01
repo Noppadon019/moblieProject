@@ -12,7 +12,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
   <script>
-    
+
     var config = {
       apiKey: "AIzaSyDTB0ZYE8IoysrmLsn6RvQHn4cSWAfPmPA",
       authDomain: "shopee-56e5c.firebaseapp.com",
@@ -22,10 +22,10 @@
       messagingSenderId: "245540693945"
     };
     firebase.initializeApp(config);
-    
+
     var db = firebase.firestore();
 
-  
+
     db.settings({
       timestampsInSnapshots: true
     });
@@ -363,19 +363,19 @@
           console.log(name)
           document.getElementById('tabbar').setActiveTab(2);
           localStorage.setItem('name', name);
-         
+
         }
         function detail(pid) {
           localStorage.setItem('id', pid);
           myNavigator.pushPage('tab4.html')
           showdetail()
-          
+
         }
         function showdetail() {
           var id = localStorage.getItem('id');
           db.collection("PRODUCTS").where("pid", "==", id).get()
             .then(function (querySnapshot) {
-              
+
               console.log(querySnapshot.docs);
               var detail_template = $('#detail_template').html();
               var html = ejs.render(detail_template, { detail: querySnapshot.docs });
@@ -479,24 +479,8 @@
 
 
         }
-
-        function deleteb(i) {
-          console.log(i);
-
-          console.log(dataCart);
-
-          var remove = dataCart.splice(i, 1)
-
-          var modal = document.querySelector('#tan');
-          modal.show();
-          setTimeout(function () {
-            modal.hide();
-          }, 2000);
-          getData2cart()
-
-        }
         var priceitem = 0;
-        //Total 
+
         function totalprice(price1) {
           var price1 = parseInt(price1, 10)
           console.log(price1);
@@ -512,6 +496,22 @@
           $('#showprice').html("<p><b>&nbsp; Total Price is : </b>" + priceitem + " </p>");
 
         }
+        function deleteb(i) {
+          console.log(i);
+
+          console.log(dataCart);
+
+          var remove = dataCart.splice(i, 1)
+
+          var modal = document.querySelector('#tan');
+          modal.show();
+          setTimeout(function () {
+            modal.hide();
+          }, 2000);
+          getData2cart()
+
+        }
+
       </script>
 
 </html>
